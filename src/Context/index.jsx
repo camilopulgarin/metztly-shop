@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
-
+import { products } from '../utils/db/products'
 export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider = ({children}) => {
@@ -26,9 +26,9 @@ export const ShoppingCartProvider = ({children}) => {
     const [order, setOrder] = useState([])
 
     //Get products
-    const [items, setitems] = useState(null)
+    const [items, setitems] = useState(products)
     const [filteredItems, setFilteredItems] = useState(null)
-
+    console.log("items: ", items)
     //Get products by 
     const [searchByTitle, setSearchByTitle] = useState(null)
     
@@ -38,7 +38,7 @@ export const ShoppingCartProvider = ({children}) => {
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
           .then(response => response.json())
-          .then(data =>setitems(data))
+          //.then(data =>setitems(data))
       }, [])
 
       const filteredItemsByTitle = (items, searchByTitle) => {
