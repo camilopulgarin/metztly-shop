@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 import { ShoppingCartContext } from "../../Context"
-import { ShoppingBagIcon } from "@heroicons/react/24/solid"
+import { ShoppingBagIcon, MoonIcon } from "@heroicons/react/24/solid"
 
 const Navbar = () => {
     const {carProducts, setSearchByCategory} = useContext(ShoppingCartContext)
@@ -12,7 +12,9 @@ const Navbar = () => {
             <ul className="flex items-center gap-3">
                 <li className="font-semibold text-lg">
                     <NavLink to='/'>
-                        Shopi
+                        <p className="flex gap-2">
+                            Metztly <MoonIcon className="h-6 text-black"/>
+                        </p>
                     </NavLink>
                 </li>
                 <li>
