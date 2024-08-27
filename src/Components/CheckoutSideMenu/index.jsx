@@ -32,6 +32,7 @@ const CheckoutSideMenu = () => {
 
         setOrder([...order, orderToAdd])
         setCarProducts([])
+        closeCheckoutSideMenu()
         //setSearchByTitle(null)
     }
 
@@ -51,7 +52,7 @@ const CheckoutSideMenu = () => {
                         id={product.id}
                         title={product.title} 
                         imageUrl={product.image} 
-                        price={product.price}
+                        price={product.price?.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}
                         handleDelete={handleDelete}
                         />
                     ))
@@ -60,7 +61,7 @@ const CheckoutSideMenu = () => {
             <div className="px-6 mb-6">
                 <p className="flex justify-between items-center mb-2">
                     <span className="font-light">Total:</span>
-                    <span className="font-medium text-2xl">${totalPrice(carProducts)}</span>
+                    <span className="font-medium text-2xl">{totalPrice(carProducts)?.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}</span>
                 </p>
                 <Link to='my-orders/last'>
                     <button className="w-full bg-black py-3 text-white rounded-lg" onClick={() => handleCheckout()}>Checkout</button>

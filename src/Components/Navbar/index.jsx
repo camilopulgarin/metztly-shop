@@ -6,7 +6,7 @@ import { ShoppingCartContext } from "../../Context";
 //import { ShoppingBag as ShoppingBagIcon, Moon as MoonIcon } from "@mui/icons-material";
 import { ShoppingBagIcon, MoonIcon } from "@heroicons/react/24/solid"
 const Navbar = () => {
-    const { carProducts, setSearchByCategory } = useContext(ShoppingCartContext);
+    const { carProducts, setSearchByCategory, openCheckoutSideMenu } = useContext(ShoppingCartContext);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     const toggleDrawer = () => {
@@ -54,7 +54,7 @@ const Navbar = () => {
                     <NavLink to="/my-account" style={{ textDecoration: 'none', color: 'inherit' }}>My Account</NavLink>
                     <NavLink to="/sign-in" style={{ textDecoration: 'none', color: 'inherit' }}>Sign In</NavLink>
                     <Box display="flex" alignItems="center">
-                        <ShoppingBagIcon className="h-6 text-black" />
+                        <ShoppingBagIcon onClick={() => openCheckoutSideMenu()} className="h-6 text-black cursor-pointer" />
                         <Typography variant="body2">{carProducts.length}</Typography>
                     </Box>
                 </Box>
@@ -101,7 +101,7 @@ const Navbar = () => {
                         </NavLink>
                     </ListItem>
                     <ListItem>
-                        <ShoppingBagIcon className="h-6 text-black" />
+                        <ShoppingBagIcon onClick={() => openCheckoutSideMenu()} className="h-6 text-black cursor-pointer" />
                         <Typography variant="body2">{carProducts.length}</Typography>
                     </ListItem>
                 </List>
