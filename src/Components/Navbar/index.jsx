@@ -14,12 +14,12 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { to: '/all', label: 'All', action: () => setSearchByCategory('') },
-        { to: '/clothes', label: 'Clothes', action: () => setSearchByCategory('clothing') },
-        { to: '/electronics', label: 'Electronics', action: () => setSearchByCategory('electronics') },
-        { to: '/furnitures', label: 'Furnitures', action: () => setSearchByCategory('electronics') },
+        { to: '/all', label: 'Todo', action: () => setSearchByCategory('') },
+        // { to: '/clothes', label: 'Clothes', action: () => setSearchByCategory('clothing') },
+        // { to: '/electronics', label: 'Electronics', action: () => setSearchByCategory('electronics') },
+        // { to: '/furnitures', label: 'Furnitures', action: () => setSearchByCategory('electronics') },
         { to: '/toys', label: 'Toys', action: () => setSearchByCategory('electronics') },
-        { to: '/others', label: 'Others', action: () => setSearchByCategory('jewelery') },
+        { to: '/others', label: 'Otros', action: () => setSearchByCategory('jewelery') },
     ];
 
     return (
@@ -50,9 +50,9 @@ const Navbar = () => {
                             {link.label}
                         </NavLink>
                     ))}
-                    <NavLink to="/my-orders" style={{ textDecoration: 'none', color: 'inherit' }}>My Orders</NavLink>
-                    <NavLink to="/my-account" style={{ textDecoration: 'none', color: 'inherit' }}>My Account</NavLink>
-                    <NavLink to="/sign-in" style={{ textDecoration: 'none', color: 'inherit' }}>Sign In</NavLink>
+                    <NavLink to="/my-orders" style={{ textDecoration: 'none', color: 'inherit' }}>Mis Pedidos</NavLink>
+                    {/* <NavLink to="/my-account" style={{ textDecoration: 'none', color: 'inherit' }}>My Account</NavLink>
+                    <NavLink to="/sign-in" style={{ textDecoration: 'none', color: 'inherit' }}>Sign In</NavLink> */}
                     <Box display="flex" alignItems="center">
                         <ShoppingBagIcon onClick={() => openCheckoutSideMenu()} className="h-6 text-black cursor-pointer" />
                         <Typography variant="body2">{carProducts.length}</Typography>
@@ -87,10 +87,10 @@ const Navbar = () => {
                     ))}
                     <ListItem button>
                         <NavLink to="/my-orders" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
-                            <ListItemText primary="My Orders" />
+                            <ListItemText primary="Mis Pedidos" />
                         </NavLink>
                     </ListItem>
-                    <ListItem button>
+                    {/* <ListItem button>
                         <NavLink to="/my-account" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
                             <ListItemText primary="My Account" />
                         </NavLink>
@@ -99,7 +99,7 @@ const Navbar = () => {
                         <NavLink to="/sign-in" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
                             <ListItemText primary="Sign In" />
                         </NavLink>
-                    </ListItem>
+                    </ListItem> */}
                     <ListItem>
                         <ShoppingBagIcon onClick={() => openCheckoutSideMenu()} className="h-6 text-black cursor-pointer" />
                         <Typography variant="body2">{carProducts.length}</Typography>
